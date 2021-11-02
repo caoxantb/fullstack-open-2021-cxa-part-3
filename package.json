@@ -4,13 +4,14 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "build:ui": "rm -rf build && cd \"../../../Part 2 - Communicating with Server/Exercises 2.6 - 2.11 + Exercises 2.15 - 2.20/phonebook\" && npm run build && cp -r build \"../../../Part 3 - Programming a Server with NodeJS and Express/Exercises 3.1 - 3.11 + Exercises 3.13 - 3.21/phonebook\"",
+        "build:ui": "rm -rf build && cd \"../../../Part 2 - Communicating with Server/Exercises 2.6 - 2.11 + Exercises 2.15 - 2.20/phonebook\" && npm run build && cp -r build \"../../../Part 3 - Programming a Server with NodeJS and Express/Exercises 3.1 - 3.11 + Exercises 3.13 - 3.22/phonebook\"",
         "start": "node index.js",
         "dev": "nodemon index.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "deploy": "git push heroku HEAD:main",
         "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
-        "logs:prod": "heroku logs --tail"
+        "logs:prod": "heroku logs --tail",
+        "lint": "eslint ."
     },
     "author": "Xuan-An Cao",
     "license": "ISC",
@@ -23,6 +24,7 @@
         "morgan": "^1.10.0"
     },
     "devDependencies": {
+        "eslint": "^8.1.0",
         "nodemon": "^2.0.14"
     }
 }
