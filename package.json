@@ -1,0 +1,28 @@
+{
+    "name": "phonebook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build:ui": "rm -rf build && cd \"../../../Part 2 - Communicating with Server/Exercises 2.6 - 2.11 + Exercises 2.15 - 2.20/phonebook\" && npm run build && cp -r build \"../../../Part 3 - Programming a Server with NodeJS and Express/Exercises 3.1 - 3.11 + Exercises 3.13 - 3.21/phonebook\"",
+        "start": "node index.js",
+        "dev": "nodemon index.js",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "deploy": "git push heroku HEAD:main",
+        "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
+        "logs:prod": "heroku logs --tail"
+    },
+    "author": "Xuan-An Cao",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mongoose": "^6.0.12",
+        "mongoose-unique-validator": "^3.0.0",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.14"
+    }
+}
