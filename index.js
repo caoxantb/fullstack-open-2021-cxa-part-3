@@ -34,6 +34,15 @@ app.get("/api/persons/:id", (req, res) => {
     .catch((error) => next(error));
 });
 
+app.get("/info", (req, res) => {
+  Person.find({}).then((persons) => {
+    res.send(`<div> 
+    <div> The database has ${persons.length} entries </div>
+    <div> ${new Date()}
+    </div>`);
+  });
+});
+
 app.delete("/api/persons/:id", (req, res, next) => {
   Person.findByIdAndRemove(req.params.id)
     .then(() => {
